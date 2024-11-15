@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+        height:  100vh;
+    }
+    .card
+    {
+        position: relative;
+        height:300px;
+        width: 250px;
+        border: 1px solid balck;
+        padding-bottom: 10px;
+      
+    }
+    .front img{
+        height: 100%;
+        width: 100%;
+        padding-bottom: 10px;
+        object-fit: cover;
+      
+    }
+    .front
+    {
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        transform:perspective(1000px) rotateY(0deg);
+        transition: 2s;
+        box-shadow: 0px 7px 29x 0 rgba(200,200,211,0.2);
+    }
+    .back
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 20px;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        box-shadow: 0px 7px 29px 10px  rgba(100,100,111,0.2);
+        transform:perspective(1000px) rotateY(-180deg);
+        transition: 2s;
+    }
+    .back,.front
+    {
+        transform-style: preserve-3d;
+    }
+    .card:hover .back
+    {
+        transform:perspective(1000px) rotateY(0deg);
+    }
+    .card:hover .front
+    {
+        transform:perspective(1000px) rotateY(180deg);
+    }
+</style>
+<body>
+    <div class="card">
+        <div class="front">
+            <img src="img.jpg">
+        </div>
+        <div class="back">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic numquam ratione pariatur quae distinctio sit! Voluptas nesciunt quisquam quasi.
+        </div>
+    </div>
+</body>
+</html>

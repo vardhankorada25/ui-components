@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        
+    }
+    .blog
+    {    
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        
+    }
+    .front
+    {
+        position: absolute;
+        height: 400px;
+        width: 350px;
+        border: 1px solid black;
+        border-radius: 15px;
+        background-color: darkblue;
+        transition: all 2s;
+        color: white;
+        text-align: center;
+        padding-top: 90px;
+        backface-visibility: hidden;
+        left: 100px;
+    }
+    .back
+    {   
+        position: relative;
+        width: 350px;
+        height: 400px;
+        display: flex;
+        justify-content: center ;
+        align-items: center;
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 1px 7px 29px rgba(32, 32, 34, 0.2) ;
+        backface-visibility: hidden;
+        margin-left: 100px;
+        z-index: -1;
+        backface-visibility: hidden; 
+    }
+    .front
+    {
+        display: flex;
+        justify-content: center ;
+        padding-top: 180px;
+        transform-style: preserve-3d;
+        z-index: 1;
+        backface-visibility: hidden ;
+         transform-origin: 0;
+    }
+    .front:hover
+    {
+     transform:  perspective(2000px) rotateY(-85deg);
+     transition: all 0.5s;
+    }
+</style>
+<body>
+    <div class="blog">
+        <div class="front">
+          <h3>HOVER ME</h3>
+        </div>
+        <div class="back">
+            <h3>HELLO</h3>
+          </div>
+      </div>
+ 
+</body>
+</html>
+
